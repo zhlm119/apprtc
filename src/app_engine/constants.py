@@ -7,8 +7,8 @@ This module contains the constants used in AppRTC Python modules.
 import os
 
 # Deprecated domains which we should to redirect to REDIRECT_URL.
-REDIRECT_DOMAINS =  [
-  'apprtc.appspot.com', 'apprtc.webrtc.org', 'www.appr.tc'
+REDIRECT_DOMAINS = [
+    'apprtc.appspot.com', 'apprtc.webrtc.org', 'www.appr.tc'
 ]
 # URL which we should redirect to if matching in REDIRECT_DOMAINS.
 REDIRECT_URL = 'https://appr.tc'
@@ -22,20 +22,10 @@ LOOPBACK_CLIENT_ID = 'LOOPBACK_CLIENT_ID'
 # directly rather than retrieving them from an ICE server provider.
 ICE_SERVER_OVERRIDE = None
 # Enable by uncomment below and comment out above, then specify turn and stun
-ICE_SERVER_OVERRIDE  = [
-  {
-    "urls": [
-      "turn:47.52.224.177:3478?transport=udp",
-      "turn:47.52.224.177:3478?transport=tcp"
-    ],
-    "username": "aa",
-    "credential": "bb"
-  },
-  {
-    "urls": [
-      "stun:47.52.224.177:3478"
-    ]
-  }
+ICE_SERVER_OVERRIDE = [
+    {"urls": "stun:47.52.149.85:3478"},
+    {"urls": "turn:47.52.149.85:3478?transport=tcp", "credential": "bb", "username": "aa"},
+    {"urls": "turn:47.52.149.85:3478?transport=udp", "credential": "bb", "username": "aa"}
 ]
 
 ICE_SERVER_BASE_URL = 'https://networktraversal.googleapis.com'
