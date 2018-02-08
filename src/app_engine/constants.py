@@ -22,21 +22,21 @@ LOOPBACK_CLIENT_ID = 'LOOPBACK_CLIENT_ID'
 # directly rather than retrieving them from an ICE server provider.
 ICE_SERVER_OVERRIDE = None
 # Enable by uncomment below and comment out above, then specify turn and stun
-# ICE_SERVER_OVERRIDE  = [
-#   {
-#     "urls": [
-#       "turn:hostname/IpToTurnServer:19305?transport=udp",
-#       "turn:hostname/IpToTurnServer:19305?transport=tcp"
-#     ],
-#     "username": "TurnServerUsername",
-#     "credential": "TurnServerCredentials"
-#   },
-#   {
-#     "urls": [
-#       "stun:hostname/IpToStunServer:19302"
-#     ]
-#   }
-# ]
+ICE_SERVER_OVERRIDE  = [
+  {
+    "urls": [
+      "turn:47.52.224.177:19305?transport=udp",
+      "turn:47.52.224.177:19305?transport=tcp"
+    ],
+    "username": "aa",
+    "credential": "bb"
+  },
+  {
+    "urls": [
+      "stun:47.52.224.177:19302"
+    ]
+  }
+]
 
 ICE_SERVER_BASE_URL = 'https://networktraversal.googleapis.com'
 ICE_SERVER_URL_TEMPLATE = '%s/v1alpha/iceconfig?key=%s'
