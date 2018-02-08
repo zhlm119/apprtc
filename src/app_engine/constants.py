@@ -25,15 +25,15 @@ ICE_SERVER_OVERRIDE = None
 ICE_SERVER_OVERRIDE  = [
   {
     "urls": [
-      "turn:47.52.224.177:19305?transport=udp",
-      "turn:47.52.224.177:19305?transport=tcp"
+      "turn:47.52.224.177:3478?transport=udp",
+      "turn:47.52.224.177:3478?transport=tcp"
     ],
     "username": "aa",
     "credential": "bb"
   },
   {
     "urls": [
-      "stun:47.52.224.177:19302"
+      "stun:47.52.224.177:3478"
     ]
   }
 ]
