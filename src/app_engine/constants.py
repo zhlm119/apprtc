@@ -23,9 +23,9 @@ LOOPBACK_CLIENT_ID = 'LOOPBACK_CLIENT_ID'
 ICE_SERVER_OVERRIDE = None
 # Enable by uncomment below and comment out above, then specify turn and stun
 ICE_SERVER_OVERRIDE = [
-    {"urls": "stun:47.52.149.85:3478"},
-    {"urls": "turn:47.52.149.85:3478?transport=tcp", "credential": "bb", "username": "aa"},
-    {"urls": "turn:47.52.149.85:3478?transport=udp", "credential": "bb", "username": "aa"}
+    {"urls": "stun:47.52.224.177:3478"},
+    {"urls": "turn:47.52.224.177:3478?transport=tcp", "credential": "bb", "username": "aa"},
+    {"urls": "turn:47.52.224.177:3478?transport=udp", "credential": "bb", "username": "aa"}
 ]
 
 ICE_SERVER_BASE_URL = 'https://networktraversal.googleapis.com'
