@@ -637,7 +637,7 @@ def checkIfRedirect(self):
 
 
 class TurnPage(webapp2.RequestHandler):
-    def get(self):
+    def post(self):
         turn_server = [
             {
                 "urls": [
