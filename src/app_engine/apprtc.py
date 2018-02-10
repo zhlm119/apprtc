@@ -638,20 +638,45 @@ def checkIfRedirect(self):
 
 class TurnPage(webapp2.RequestHandler):
     def post(self):
+        # turn_server = [
+        #     {
+        #         "urls": [
+        #             "turn:47.52.224.177:3478?transport=tcp",
+        #             "turn:47.52.224.177:3478?transport=udp"
+        #         ],
+        #         "username": "aa",
+        #         "credential": "bb"
+        #     },
+        #     {
+        #         "urls": [
+        #             "stun:47.52.224.177:3478",
+        #             "stun:stun.l.google.com:19305"
+        #         ]
+        #     }
+        # ]
+
         turn_server = [
             {
-                "urls": [
-                    "turn:47.52.224.177:3478?transport=tcp",
-                    "turn:47.52.224.177:3478?transport=udp"
+                "lifetimeDuration": "86400s",
+                "iceServers": [
+                    {
+                        "urls": [
+                            "turn:173.194.203.127:19305?transport=udp",
+                            "turn:[2607:f8b0:400e:c05::7f]:19305?transport=udp",
+                            "turn:173.194.203.127:443?transport=tcp",
+                            "turn:[2607:f8b0:400e:c05::7f]:443?transport=tcp"
+                        ],
+                        "username": "CPX1/tMFEgbakE/f25kYzc/s6OMTIICjBQ",
+                        "credential": "R7UlFD83EakwIQh7hjfIp4ehSbA="
+                    },
+                    {
+                        "urls": [
+                            "stun:stun.l.google.com:19302"
+                        ]
+                    }
                 ],
-                "username": "aa",
-                "credential": "bb"
-            },
-            {
-                "urls": [
-                    "stun:47.52.224.177:3478",
-                    "stun:stun.l.google.com:19305"
-                ]
+                "blockStatus": "NOT_BLOCKED",
+                "iceTransportPolicy": "all"
             }
         ]
         self.response.write(json.dumps(turn_server))
