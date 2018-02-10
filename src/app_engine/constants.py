@@ -28,25 +28,25 @@ ICE_SERVER_OVERRIDE = None
 #     {"urls": "turn:47.52.224.177:3478?transport=udp", "credential": "bb", "username": "aa"}
 # ]
 
-ICE_SERVER_OVERRIDE = [
-    {
-        "urls": [
-            "turn:m1.xirsys.com:80?transport=udp",
-            "turn:m1.xirsys.com:3478?transport=udp",
-            "turn:m1.xirsys.com:80?transport=tcp"
-        ],
-        "username": "20061d36-0d9e-11e8-b4cf-b848b6c29b42",
-        "credential": "20061e58-0d9e-11e8-8d45-40707a229e4b"
-    },
-    {
-        "urls": [
-            "stun:stun:m1.xirsys.com"
-        ]
-    }
-]
+# ICE_SERVER_OVERRIDE = [
+#     {
+#         "urls": [
+#             "turn:m1.xirsys.com:80?transport=udp",
+#             "turn:m1.xirsys.com:3478?transport=udp",
+#             "turn:m1.xirsys.com:80?transport=tcp"
+#         ],
+#         "username": "20061d36-0d9e-11e8-b4cf-b848b6c29b42",
+#         "credential": "20061e58-0d9e-11e8-8d45-40707a229e4b"
+#     },
+#     {
+#         "urls": [
+#             "stun:stun:m1.xirsys.com"
+#         ]
+#     }
+# ]
 
-ICE_SERVER_BASE_URL = 'https://networktraversal.googleapis.com'
-ICE_SERVER_URL_TEMPLATE = '%s/v1alpha/iceconfig?key=%s'
+ICE_SERVER_BASE_URL = 'http://47.52.224.177:8080'
+ICE_SERVER_URL_TEMPLATE = '%s/turn?key=%s'
 ICE_SERVER_API_KEY = os.environ.get('ICE_SERVER_API_KEY')
 
 # Dictionary keys in the collider instance info constant.
