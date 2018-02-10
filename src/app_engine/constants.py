@@ -7,8 +7,8 @@ This module contains the constants used in AppRTC Python modules.
 import os
 
 # Deprecated domains which we should to redirect to REDIRECT_URL.
-REDIRECT_DOMAINS = [
-    'apprtc.appspot.com', 'apprtc.webrtc.org', 'www.appr.tc'
+REDIRECT_DOMAINS =  [
+  'apprtc.appspot.com', 'apprtc.webrtc.org', 'www.appr.tc'
 ]
 # URL which we should redirect to if matching in REDIRECT_DOMAINS.
 REDIRECT_URL = 'https://appr.tc'
@@ -22,31 +22,24 @@ LOOPBACK_CLIENT_ID = 'LOOPBACK_CLIENT_ID'
 # directly rather than retrieving them from an ICE server provider.
 ICE_SERVER_OVERRIDE = None
 # Enable by uncomment below and comment out above, then specify turn and stun
-# ICE_SERVER_OVERRIDE = [
-#     {"urls": "stun:47.52.224.177:3478"},
-#     {"urls": "turn:47.52.224.177:3478?transport=tcp", "credential": "bb", "username": "aa"},
-#     {"urls": "turn:47.52.224.177:3478?transport=udp", "credential": "bb", "username": "aa"}
-# ]
-
-# ICE_SERVER_OVERRIDE = [
-#     {
-#         "urls": [
-#             "turn:m1.xirsys.com:80?transport=udp",
-#             "turn:m1.xirsys.com:3478?transport=udp",
-#             "turn:m1.xirsys.com:80?transport=tcp"
-#         ],
-#         "username": "20061d36-0d9e-11e8-b4cf-b848b6c29b42",
-#         "credential": "20061e58-0d9e-11e8-8d45-40707a229e4b"
-#     },
-#     {
-#         "urls": [
-#             "stun:stun:m1.xirsys.com"
-#         ]
-#     }
+# ICE_SERVER_OVERRIDE  = [
+#   {
+#     "urls": [
+#       "turn:hostname/IpToTurnServer:19305?transport=udp",
+#       "turn:hostname/IpToTurnServer:19305?transport=tcp"
+#     ],
+#     "username": "TurnServerUsername",
+#     "credential": "TurnServerCredentials"
+#   },
+#   {
+#     "urls": [
+#       "stun:hostname/IpToStunServer:19302"
+#     ]
+#   }
 # ]
 
 ICE_SERVER_BASE_URL = 'http://47.52.224.177:8080'
-ICE_SERVER_URL_TEMPLATE = '%s/turn?key=%s'
+ICE_SERVER_URL_TEMPLATE = '%s/iceconfig?key=%s'
 ICE_SERVER_API_KEY = os.environ.get('ICE_SERVER_API_KEY')
 
 # Dictionary keys in the collider instance info constant.

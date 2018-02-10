@@ -661,13 +661,11 @@ class TurnPage(webapp2.RequestHandler):
                 "iceServers": [
                     {
                         "urls": [
-                            "turn:173.194.203.127:19305?transport=udp",
-                            "turn:[2607:f8b0:400e:c05::7f]:19305?transport=udp",
-                            "turn:173.194.203.127:443?transport=tcp",
-                            "turn:[2607:f8b0:400e:c05::7f]:443?transport=tcp"
+                            "turn:47.52.224.177:3478?transport=tcp",
+                            "turn:47.52.224.177:3478?transport=udp"
                         ],
-                        "username": "CPX1/tMFEgbakE/f25kYzc/s6OMTIICjBQ",
-                        "credential": "R7UlFD83EakwIQh7hjfIp4ehSbA="
+                        "username": "aa",
+                        "credential": "bb"
                     },
                     {
                         "urls": [
@@ -691,5 +689,5 @@ app = webapp2.WSGIApplication([
     ('/message/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)', MessagePage),
     ('/params', ParamsPage),
     ('/r/([a-zA-Z0-9-_]+)', RoomPage),
-    ('/turn', TurnPage),
+    ('/iceconfig', TurnPage),
 ], debug=True)
