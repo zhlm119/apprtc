@@ -638,23 +638,6 @@ def checkIfRedirect(self):
 
 class TurnPage(webapp2.RequestHandler):
     def post(self):
-        # turn_server = [
-        #     {
-        #         "urls": [
-        #             "turn:47.52.224.177:3478?transport=tcp",
-        #             "turn:47.52.224.177:3478?transport=udp"
-        #         ],
-        #         "username": "aa",
-        #         "credential": "bb"
-        #     },
-        #     {
-        #         "urls": [
-        #             "stun:47.52.224.177:3478",
-        #             "stun:stun.l.google.com:19305"
-        #         ]
-        #     }
-        # ]
-
         turn_server = {
             "lifetimeDuration": "86400s",
             "iceServers": [
@@ -668,35 +651,14 @@ class TurnPage(webapp2.RequestHandler):
                 },
                 {
                     "urls": [
-                        "stun:stun.l.google.com:19302"
+                        "stun:47.52.224.177:3478"
+                        # "stun:stun.l.google.com:19302",
                     ]
                 }
             ],
             "blockStatus": "NOT_BLOCKED",
             "iceTransportPolicy": "all"
         }
-        # turn_server = [
-        #     {
-        #         "lifetimeDuration": "86400s",
-        #         "iceServers": [
-        #             {
-        #                 "urls": [
-        #                     "turn:47.52.224.177:3478?transport=tcp",
-        #                     "turn:47.52.224.177:3478?transport=udp"
-        #                 ],
-        #                 "username": "aa",
-        #                 "credential": "bb"
-        #             },
-        #             {
-        #                 "urls": [
-        #                     "stun:stun.l.google.com:19302"
-        #                 ]
-        #             }
-        #         ],
-        #         "blockStatus": "NOT_BLOCKED",
-        #         "iceTransportPolicy": "all"
-        #     }
-        # ]
         self.response.write(json.dumps(turn_server))
 
 
