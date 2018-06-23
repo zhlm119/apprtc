@@ -287,7 +287,7 @@ def get_room_parameters(request, room_id, client_id, is_initiator):
     pc_config = make_pc_config(ice_transports, ice_server_override)
     pc_constraints = make_pc_constraints(dtls, dscp, ipv6)
     offer_options = {};
-    media_constraints = make_media_stream_constraints(audio, video,
+    media_constraints = make_media_stream_constraints('false', 'false',
                                                       firefox_fake_device)
     wss_url, wss_post_url = get_wss_parameters(request)
 
@@ -308,7 +308,7 @@ def get_room_parameters(request, room_id, client_id, is_initiator):
         'include_rtstats_js': include_rtstats_js,
         'wss_url': wss_url,
         'wss_post_url': wss_post_url,
-        'bypass_join_confirmation': json.dumps(bypass_join_confirmation),
+        'bypass_join_confirmation': json.dumps(True),
         'version_info': json.dumps(get_version_info())
     }
 
