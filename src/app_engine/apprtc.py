@@ -647,7 +647,7 @@ class TurnPage1(webapp2.RequestHandler):
                     "credential": "ajBMNTd5QUExSFU5L2VOMXgzOFZBQ1FDWE5lWDg0Y1VCeEdmWmdnMTl6UT0="
                 },
                 {
-                    "urls": ["stun:47.254.22.156:3478", "stun:stun.l.google.com:19302"]
+                    "urls": ["stun:stun.l.google.com:19302"]
                 }
             ],
             "blockStatus": "NOT_BLOCKED",
