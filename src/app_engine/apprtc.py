@@ -266,7 +266,7 @@ def get_room_parameters(request, room_id, client_id, is_initiator):
     include_rtstats_js = ''
     if str(os.environ.get('WITH_RTSTATS')) != 'none' or \
             (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/') and \
-                         app_identity.get_application_id() == 'apprtc'):
+             app_identity.get_application_id() == 'apprtc'):
         include_rtstats_js = \
             '<script src="/js/rtstats.js"></script><script src="/pako/pako.min.js"></script>'
 
@@ -636,7 +636,7 @@ def checkIfRedirect(self):
         webapp2.redirect(redirect_url, permanent=True, abort=True)
 
 
-class TurnPage(webapp2.RequestHandler):
+class TurnPage1(webapp2.RequestHandler):
     def post(self):
         turn_server = {
             "lifetimeDuration": "86400s",
@@ -662,6 +662,59 @@ class TurnPage(webapp2.RequestHandler):
         self.response.write(json.dumps(turn_server))
 
 
+class TurnPage2(webapp2.RequestHandler):
+    def post(self):
+        turn_server = {
+            "lifetimeDuration": "86400s",
+            "iceServers": [
+                {
+                    "urls": ["numb.viagenie.ca"],
+                    "username": "zhlm119@gmail.com",
+                    "credential": "zlm090533"
+                },
+                {
+                    "urls": [
+                        "numb.viagenie.ca",
+                        "stun:stun.l.google.com:19302"
+                    ]
+                }
+            ],
+            "blockStatus": "NOT_BLOCKED",
+            "iceTransportPolicy": "all"
+        }
+        self.response.write(json.dumps(turn_server))
+
+
+class TurnPage3(webapp2.RequestHandler):
+    def post(self):
+        turn_server = {
+            "lifetimeDuration": "86400s",
+            "iceServers": [
+                {
+                    "urls": [
+                        "turn:m1.xirsys.com:80?transport=udp",
+                        "turn:m1.xirsys.com:3478?transport=udp",
+                        "turn:m1.xirsys.com:80?transport=tcp",
+                        "turn:m1.xirsys.com:3478?transport=tcp",
+                        "turns:m1.xirsys.com:443?transport=tcp",
+                        "turns:m1.xirsys.com:5349?transport=tcp"
+                    ],
+                    "username": "20061d36-0d9e-11e8-b4cf-b848b6c29b42",
+                    "credential": "20061e58-0d9e-11e8-8d45-40707a229e4b"
+                },
+                {
+                    "urls": [
+                        "stun:stun:m1.xirsys.com",
+                        "stun:stun.l.google.com:19302"
+                    ]
+                }
+            ],
+            "blockStatus": "NOT_BLOCKED",
+            "iceTransportPolicy": "all"
+        }
+        self.response.write(json.dumps(turn_server))
+
+
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/a/', analytics_page.AnalyticsPage),
@@ -671,5 +724,5 @@ app = webapp2.WSGIApplication([
     ('/message/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)', MessagePage),
     ('/params', ParamsPage),
     ('/r/([a-zA-Z0-9-_]+)', RoomPage),
-    ('/iceconfig', TurnPage),
+    ('/iceconfig', TurnPage3),
 ], debug=True)
