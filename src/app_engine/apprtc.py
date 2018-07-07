@@ -636,24 +636,6 @@ def checkIfRedirect(self):
         webapp2.redirect(redirect_url, permanent=True, abort=True)
 
 
-class TurnPage(webapp2.RequestHandler):
-    def post(self):
-        turn_server = {
-            "lifetimeDuration": "86400s",
-            "iceServers": [
-                {
-                    "urls": ["turn:47.254.22.156:3478?transport=tcp", "turn:47.254.22.156:3478?transport=udp"]
-                },
-                {
-                    "urls": ["stun:stun.l.google.com:19302"]
-                }
-            ],
-            "blockStatus": "NOT_BLOCKED",
-            "iceTransportPolicy": "all"
-        }
-        self.response.write(json.dumps(turn_server))
-
-
 class TurnPage1(webapp2.RequestHandler):
     def post(self):
         turn_server = {
@@ -731,5 +713,5 @@ app = webapp2.WSGIApplication([
     ('/message/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)', MessagePage),
     ('/params', ParamsPage),
     ('/r/([a-zA-Z0-9-_]+)', RoomPage),
-    ('/iceconfig', TurnPage),
+    ('/iceconfig', TurnPage1),
 ], debug=True)
