@@ -643,8 +643,8 @@ class TurnPage1(webapp2.RequestHandler):
             "iceServers": [
                 {
                     "urls": ["turn:47.254.22.156:3478?transport=tcp", "turn:47.254.22.156:3478?transport=udp"],
-                    "username": "1531037852:apprtc",
-                    "credential": "MHJDRTJEcEY5WFpiZUtzSGpOTTVMNjQvTkV0L2ZKaFNCcWFIZjZON0krVT0="
+                    "username": "1531038965:apprtc",
+                    "credential": "ajBMNTd5QUExSFU5L2VOMXgzOFZBQ1FDWE5lWDg0Y1VCeEdmWmdnMTl6UT0="
                 },
                 {
                     "urls": ["stun:47.254.22.156:3478", "stun:stun.l.google.com:19302"]
