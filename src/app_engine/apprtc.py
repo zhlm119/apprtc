@@ -663,7 +663,7 @@ class TurnPage2(webapp2.RequestHandler):
             "iceServers": [
                 {
                     "urls": ["turn:numb.viagenie.ca"],
-                    "username": "zhlm119@gmail.com",
+                    "username": "azhlm119@gmail.com",
                     "credential": "zlm090533"
                 },
                 {
@@ -712,5 +712,5 @@ app = webapp2.WSGIApplication([
     ('/message/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)', MessagePage),
     ('/params', ParamsPage),
     ('/r/([a-zA-Z0-9-_]+)', RoomPage),
-    ('/iceconfig', TurnPage3),
+    ('/iceconfig', TurnPage1),
 ], debug=True)
