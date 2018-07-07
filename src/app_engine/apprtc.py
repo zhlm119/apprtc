@@ -667,7 +667,9 @@ class TurnPage2(webapp2.RequestHandler):
                     "credential": "zlm090533"
                 },
                 {
-                    "urls": ["stun:numb.viagenie.ca", "stun:stun.l.google.com:19302"]
+                    "urls": ["stun:numb.viagenie.ca", "stun:stun.l.google.com:19302"],
+                    "username": "zhlm119@gmail.com",
+                    "credential": "zlm090533"
                 }
             ],
             "blockStatus": "NOT_BLOCKED",
