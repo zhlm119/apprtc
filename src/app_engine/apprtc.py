@@ -695,9 +695,7 @@ class TurnPage3(webapp2.RequestHandler):
                         "turn:m1.xirsys.com:80?transport=udp",
                         "turn:m1.xirsys.com:3478?transport=udp",
                         "turn:m1.xirsys.com:80?transport=tcp",
-                        "turn:m1.xirsys.com:3478?transport=tcp",
-                        "turns:m1.xirsys.com:443?transport=tcp",
-                        "turns:m1.xirsys.com:5349?transport=tcp"
+                        "turn:m1.xirsys.com:3478?transport=tcp"
                     ],
                     "username": "20061d36-0d9e-11e8-b4cf-b848b6c29b42",
                     "credential": "20061e58-0d9e-11e8-8d45-40707a229e4b"
