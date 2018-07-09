@@ -714,5 +714,5 @@ app = webapp2.WSGIApplication([
     ('/message/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)', MessagePage),
     ('/params', ParamsPage),
     ('/r/([a-zA-Z0-9-_]+)', RoomPage),
-    ('/iceconfig', TurnPage2),
+    ('/iceconfig', TurnPage3),
 ], debug=True)
