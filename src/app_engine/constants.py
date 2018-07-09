@@ -38,7 +38,7 @@ ICE_SERVER_OVERRIDE = None
 #   }
 # ]
 
-ICE_SERVER_BASE_URL = 'http://www.aspy.gq'
+ICE_SERVER_BASE_URL = 'https://aspy.gq'
 ICE_SERVER_URL_TEMPLATE = '%s/iceconfig?key=%s'
 ICE_SERVER_API_KEY = os.environ.get('ICE_SERVER_API_KEY')
 
