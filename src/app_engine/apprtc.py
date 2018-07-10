@@ -642,9 +642,9 @@ class TurnPage1(webapp2.RequestHandler):
             "lifetimeDuration": "86400s",
             "iceServers": [
                 {
-                    "urls": ["turn:47.254.22.156:3478?transport=tcp", "turn:47.254.22.156:3478?transport=udp"],
-                    "username": "1531038965:apprtc",
-                    "credential": "ajBMNTd5QUExSFU5L2VOMXgzOFZBQ1FDWE5lWDg0Y1VCeEdmWmdnMTl6UT0="
+                    "urls": ["turn:47.254.30.51"],
+                    "username": "mec33",
+                    "credential": "m123456"
                 },
                 {
                     "urls": ["stun:stun.l.google.com:19302"]
@@ -714,5 +714,5 @@ app = webapp2.WSGIApplication([
     ('/message/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)', MessagePage),
     ('/params', ParamsPage),
     ('/r/([a-zA-Z0-9-_]+)', RoomPage),
-    ('/iceconfig', TurnPage2),
+    ('/iceconfig', TurnPage1),
 ], debug=True)
