@@ -642,9 +642,9 @@ class TurnPage1(webapp2.RequestHandler):
             "lifetimeDuration": "86400s",
             "iceServers": [
                 {
-                    "urls": ["turn:47.254.30.51"],
-                    "username": "mec33",
-                    "credential": "m123456"
+                    "urls": ["turn:47.254.22.156"],
+                    "username": "ttspy",
+                    "credential": "ttspyrtc"
                 },
                 {
                     "urls": ["stun:stun.l.google.com:19302"]
