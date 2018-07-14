@@ -437,9 +437,9 @@ AppController.prototype.onKeyPress_ = function(event) {
 
 AppController.prototype.pushCallNavigation_ = function(roomId, roomLink) {
   if (!isChromeApp()) {
-    roomLink = roomLink.replace("http", "https");
-    window.history.pushState({'roomId': roomId, 'roomLink': roomLink}, roomId,
-        roomLink);
+    // roomLink = roomLink.replace("http", "https");
+    // window.history.pushState({'roomId': roomId, 'roomLink': roomLink}, roomId,
+    //     roomLink);
   }
 };
 
